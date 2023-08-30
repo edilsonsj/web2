@@ -18,7 +18,7 @@ class CleaningProductFactory implements ProductFactory
     public function createProduct($name, $price)
     {
         $product = new Product($this->connection, $this->category);
-        $product->createProduct($name, $price);
+        $product->createProduct($name, $price, $this->category);
     }
 }
 
@@ -35,6 +35,6 @@ class FoodProductFactory implements ProductFactory
     public function createProduct($name, $price)
     {
         $product = new Product($this->connection, $this->category);
-        $product->createProduct($name, $price);
+        $product->createProduct($name, $price, $this->category);
     }
 }

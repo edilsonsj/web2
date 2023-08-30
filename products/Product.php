@@ -11,9 +11,9 @@ class Product
         $this->category = $category;
     }
 
-    public function createProduct($name, $price)
+    public function createProduct($name, $price, $category)
     {
-        $query = "INSERT INTO products (name, price) VALUES ('$name', '$price')";
+        $query = "INSERT INTO products (name, price, category) VALUES ('$name', '$price', '$category')";
         $this->connection->query($query);
     }
 
