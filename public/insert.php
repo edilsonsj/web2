@@ -1,7 +1,8 @@
 <?php
 include '../database/DatabaseConnection.php';
 include '../products/Product.php';
-include '../products/ProductFactory.php';
+include '../products/CleaningProductFactory.php';
+include '../products/FoodProductFactory.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST["name"];
