@@ -43,9 +43,17 @@ function getAllProducts($connection)
 
 <head>
     <title>Product List</title>
+    <link rel="stylesheet" href="css/list_php.css">
 </head>
 
 <body>
+    <div class="navbar">
+        <a href="index.html">MERCADO WEB2</a>
+        <div class="navbar-right">
+            <a href="manage_products.php">MANAGE</a>
+        </div>
+    </div>
+
     <h2>Product List</h2>
 
     <form action="list_products.php" method="post">
@@ -55,11 +63,29 @@ function getAllProducts($connection)
         <button type="submit" name="filter" value="category">Category</button>
     </form>
 
-    <ul>
-        <?php foreach ($sortedProducts as $product) : ?>
-            <li><?php echo "{$product['name']} - {$product['price']} - {$product['category']}"; ?></li>
-        <?php endforeach; ?>
-    </ul>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Category</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            $isEven = false;
+            foreach ($sortedProducts as $product) {
+                $isEven = !$isEven;
+                $evenClass = $isEven ? "even" : "";
+                echo "<tr class=\"$evenClass\">";
+                echo "<td>{$product['name']}</td>";
+                echo "<td>{$product['price']}</td>";
+                echo "<td>{$product['category']}</td>";
+                echo "</tr>";
+            }
+            ?>
+        </tbody>
+    </table>
 </body>
 
 </html>

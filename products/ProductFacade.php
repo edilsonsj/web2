@@ -2,6 +2,9 @@
 
 include 'ProductContext.php';
 include 'Product.php';
+require_once 'FoodProductFactory.php';
+require_once 'CleaningProductFactory.php';
+
 
 
 class ProductFacade
@@ -17,7 +20,7 @@ class ProductFacade
 
     public function createCleaningProduct($name, $price)
     {
-        $cleaningFactory = new CleaningProduct($this->connection, '');
+        $cleaningFactory = new CleaningProductFactory($this->connection, '');
         $cleaningFactory->createProduct($name, $price);
     }
 

@@ -1,24 +1,35 @@
-<!-- public/list_products.html -->
 <!DOCTYPE html>
 <html>
 
 <head>
     <title>Product List</title>
+    <link rel="stylesheet" href="css/list.css">
 </head>
 
 <body>
-    <h2>Product List</h2>
+    <div class="navbar">
+        <a href="index.html" class="navbar-logo">MERCADO WEB2</a>
+        <div class="navbar-right">
+            <a href="manage_products.php">Manage Products</a>
+        </div>
+    </div>
 
-    <form action="list_products.php" method="post">
-        <p>Filter by:</p>
-        <button type="submit" name="filter" value="min_price">Min Price</button>
-        <button type="submit" name="filter" value="max_price">Max Price</button>
-        <button type="submit" name="filter" value="category">Category</button>
-    </form>
+    <div class="content">
+        <h2 class="edit-title">Product List</h2>
 
-    <ul>
-        <!-- List of products will be displayed here -->
-    </ul>
+        <form action="list_products.php" method="post">
+            <p class="filter-label">Filter by:</p>
+            <div class="filter-buttons">
+                <button class="filter-button" type="submit" name="filter" value="min_price">Min Price</button>
+                <button class="filter-button" type="submit" name="filter" value="max_price">Max Price</button>
+                <button class="filter-button" type="submit" name="filter" value="category">Category</button>
+            </div>
+        </form>
+
+        <ul class="product-list">
+            <!-- List of products will be displayed here -->
+        </ul>
+    </div>
 </body>
 
 </html>

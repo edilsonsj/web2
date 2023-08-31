@@ -13,12 +13,21 @@ $products = $productFacade->readProducts();
 
 <head>
     <title>Manage Products</title>
+    <link rel="stylesheet" href="css/manage.css">
 </head>
 
 <body>
-    <h2>Manage Products</h2>
+    <div class="navbar">
+        <a href="index.html" class="navbar-logo">MERCADO WEB2</a>
+        <div class="navbar-right">
+            <a href="manage_products.php">Manage Products</a>
+            <a href="list_products.html">List Products</a>
+        </div>
+    </div>
 
-    <table border="1">
+    <h2 class="manage-title">Manage Products</h2>
+
+    <table class="styled-table">
         <thead>
             <tr>
                 <th>Name</th>
