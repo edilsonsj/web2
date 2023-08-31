@@ -1,6 +1,7 @@
 <?php
 
 include 'ProductContext.php';
+include 'Product.php';
 
 
 class ProductFacade
@@ -48,5 +49,19 @@ class ProductFacade
     {
         $this->productContext->setStrategy($strategy);
         return $this->productContext->sortProducts($this->readProducts());
+    }
+
+    public function getProductById($id)
+    {
+        $product = new Product($this->connection, '');
+        $products = $product->readProducts();
+
+        foreach ($products as $p) {
+            if ($p['id'] == $id) {
+                return $p;
+            }
+        }
+
+        return null;
     }
 }
