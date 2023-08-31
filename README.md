@@ -16,6 +16,10 @@ O padrão Abstract Factory é composto pelas seguintes partes:
 
 ## Utilização no Projeto
 
+
+![ProductFactory_class_diagram](https://github.com/edilsonsj/web2/assets/116203479/8917928c-2c1c-4de7-9cb8-792e70b75cc8)
+
+
 No projeto, o padrão Abstract Factory foi aplicado para permitir a criação de diferentes tipos de produtos, como produtos de limpeza e produtos alimentícios, sem a necessidade de especificar as classes concretas.
 
 - **ProductFactory**: É a interface que declara o método `createProduct()` para criar produtos.
@@ -51,6 +55,9 @@ O padrão Strategy é composto pelas seguintes partes:
 
 ## Utilização no Projeto
 
+![SortingStrategy_class_diagram](https://github.com/edilsonsj/web2/assets/116203479/d2d0fd0f-88ed-4282-9cc8-064139b70213)
+
+
 No projeto, o padrão Strategy foi aplicado para implementar diferentes estratégias de ordenação de produtos.
 
 - **SortingStrategy**: É a interface que declara o método `sort()` para ordenar produtos.
@@ -83,6 +90,8 @@ O padrão Facade é composto pelas seguintes partes:
 2. **Subsistema Classes**: São as classes individuais que compõem o subsistema. Elas são responsáveis por realizar tarefas específicas do sistema.
 
 ## Utilização no Projeto
+
+![ProductFacade_class_diagram](https://github.com/edilsonsj/web2/assets/116203479/6906e906-d9c1-41ca-9e30-70ac4fc195a1)
 
 No projeto, o padrão Facade foi aplicado para simplificar a interação do cliente com as funcionalidades de gerenciamento de produtos. A classe `ProductFacade` atua como uma fachada para as operações complexas envolvendo criação, leitura, atualização e exclusão de produtos.
 
