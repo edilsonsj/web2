@@ -1,6 +1,6 @@
 <?php
-include '../database/DatabaseConnection.php';
-include '../products/ProductFacade.php';
+require_once '../database/DatabaseConnection.php';
+require_once '../products/ProductFacade.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["id"])) {
     $id = $_GET["id"];
@@ -22,12 +22,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $price = $_POST["price"];
     $category = $_POST["category"];
 
+    // Create a new instance of ProductFacade
+    $connection = new DatabaseConnection();
+    $productFacade = new ProductFacade($connection->getConnection());
+
     // Update the product
     $productFacade->updateProduct($id, $name, $price, $category);
 
     header("Location: manage_products.php"); // Redirect after updating
 }
 ?>
+
 
 <!DOCTYPE html>
 <html>
