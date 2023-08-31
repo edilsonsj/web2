@@ -1,20 +1,31 @@
 <?php
-require_once '../database/DatabaseConnection.php';
-require_once '../products/ProductFacade.php';
+$host = 'localhost';
+$username = 'root';
+$password = '';
+$dbname = 'market_db';
 
-if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["id"])) {
-    $id = $_GET["id"];
-    $connection = new DatabaseConnection();
-    $productFacade = new ProductFacade($connection->getConnection());
+$connection = new mysqli($host, $username, $password, $dbname);
 
+if ($connection->connect_error) {
+    die("Connection failed: " . $connection->connect_error);
+}
+
+$id = $_GET["id"] ?? null;
+
+if (!$id) {
+    header("Location: index.html"); // Redirect if ID not provided
+    exit();
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
     // Fetch the product by its ID
-    $product = $productFacade->getProductById($id);
+    $query = "SELECT * FROM products WHERE id = $id";
+    $result = $connection->query($query);
+    $product = $result->fetch_assoc();
 
     if (!$product) {
         die("Product not found");
     }
-} else {
-    header("Location: manage_products.php"); // Redirect if ID not provided
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -22,14 +33,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $price = $_POST["price"];
     $category = $_POST["category"];
 
-    // Create a new instance of ProductFacade
-    $connection = new DatabaseConnection();
-    $productFacade = new ProductFacade($connection->getConnection());
-
     // Update the product
-    $productFacade->updateProduct($id, $name, $price, $category);
+    $updateQuery = "UPDATE products SET name='$name', price='$price', category='$category' WHERE id=$id";
+    $connection->query($updateQuery);
 
     header("Location: manage_products.php"); // Redirect after updating
+    exit();
 }
 ?>
 
