@@ -17,7 +17,7 @@ O padrão Abstract Factory é composto pelas seguintes partes:
 ## Utilização no Projeto
 
 
-![ProductFactory_class_diagram](https://github.com/edilsonsj/web2/assets/116203479/8917928c-2c1c-4de7-9cb8-792e70b75cc8)
+![ProductFactory_class_diagram](https://github.com/edilsonsj/web2/blob/main/public/diagram%20documentation/ProductFactory_class_diagram.png)
 
 
 No projeto, o padrão Abstract Factory foi aplicado para permitir a criação de diferentes tipos de produtos, como produtos de limpeza e produtos alimentícios, sem a necessidade de especificar as classes concretas.
@@ -55,7 +55,7 @@ O padrão Strategy é composto pelas seguintes partes:
 
 ## Utilização no Projeto
 
-![SortingStrategy_class_diagram](https://github.com/edilsonsj/web2/assets/116203479/d2d0fd0f-88ed-4282-9cc8-064139b70213)
+![SortingStrategy_class_diagram](https://github.com/edilsonsj/web2/blob/main/public/diagram%20documentation/SortingStrategy_class_diagram.png)
 
 
 No projeto, o padrão Strategy foi aplicado para implementar diferentes estratégias de ordenação de produtos.
@@ -91,7 +91,7 @@ O padrão Facade é composto pelas seguintes partes:
 
 ## Utilização no Projeto
 
-![ProductFacade_class_diagram](https://github.com/edilsonsj/web2/assets/116203479/6906e906-d9c1-41ca-9e30-70ac4fc195a1)
+![ProductFacade_class_diagram](https://github.com/edilsonsj/web2/blob/main/public/diagram%20documentation/ProductFacade_class_diagram.png)
 
 No projeto, o padrão Facade foi aplicado para simplificar a interação do cliente com as funcionalidades de gerenciamento de produtos. A classe `ProductFacade` atua como uma fachada para as operações complexas envolvendo criação, leitura, atualização e exclusão de produtos.
 
